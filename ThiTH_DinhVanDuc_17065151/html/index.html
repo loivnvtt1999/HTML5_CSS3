@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    
+    <link type="text/css" rel="stylesheet" href="../CSS/bootstrap.css" />
+    <script type="text/javascript" src="../JS/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../JS/bootstrap.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var i=1;
+            function kiemTraSDT() {
+                var sdt = $("#txtSDT").val();
+                var regex = /^[0-9]{9,12}$/;
+                if (!sdt.match(regex)) {
+                    $("#erSDT").html("(*) Nhập số điện thoại từ 9-12 số ");
+                    return false;
+                }
+                else {
+                    $("#erSDT").html("(*)");
+                    return true;
+                }
+            }
+            function kiemTraSoLuong() {
+                var strSoLuong = $("#txtSoLuong").val();
+                if (strSoLuong.length == 0)
+                {
+                    $("#erSL").html("(*) Nhập số lượng từ 1-6");
+                    return false;
+                }
+                   
+                var soLuong = parseInt(strSoLuong);
+                if (soLuong >= 1 && soLuong <= 6) {
+                    $("#erSL").html("(*)");
+                    return true;
+                }
+                else
+                {
+                    $("#erSL").html("(*) Nhập số lượng từ 1-6");
+                    return false;
+                }
+                   
+            }
+            $("#txtSDT").blur(kiemTraSDT);
+        
+            $("#txtSoLuong").blur(kiemTraSoLuong);
+            $("#btnThanhToan").click(function () {
+                var sdt = $("#txtSDT").val();
+                var strMenhGia = $("#menhGia").val();
+                var menhGia= parseInt(strMenhGia);
+                var khuyenMai = 0;
+                if($("#KM50").is(":checked"))
+                {
+                    
+                    khuyenMai=50;
+                }
+                if($("#KM20").is(":checked"))
+                {
+                    khuyenMai=20;
+                }
+                var strSoLuong = $("#txtSoLuong").val();
+                var soLuong = parseInt(strSoLuong);
+               
+                var thanhTien = (menhGia - (menhGia * khuyenMai) / 100) * soLuong;
+                
+                if (kiemTraSDT() && kiemTraSoLuong())
+                {
+                    $("#txtThanhTien").val(thanhTien);
+                    var s = "<tr><td>" + (i++) + "</td><td>" + sdt + "</td><td>" + menhGia + "</td><td>" + khuyenMai + "</td><td>" + soLuong + "</td><td>" + thanhTien + "</td></tr>";
+                    $("table").append(s);
+                }
+                
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>MOBILEFONE - VIỄN THÔNG TP HCM </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default">
+                    <ul class="nav nav-pills">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nạp thẻ<i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" data-toggle="modal" data-target="#formDK">Nạp thẻ online</a></li>
+                                <li><a href="#">Mua mã thẻ</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="row">
+
+            <div class="col-md-12 text-center" style="min-height:400px;">
+                <h1>DANH SÁCH THẺ NẠP TRỰC TUYẾN</h1>
+                <table class="table table-bordered" id="tbl">
+                    <tr>
+                        <th>STT</th>
+                        <th>Số điện thoại</th>
+                        <th>Mệnh giá thẻ</th>
+                        <th>Khuyến mãi</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                       
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+       AAAAAA
+       BBBBBB
+       CCCCCC
+    </div>
+    <div id="formDK" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h1>THÔNG TIN NẠP THẺ</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input type="number" class="form-control" id="txtSDT" />
+                            <div id="erSDT">(*)</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Mệnh giá thẻ</label>
+                            <select id="menhGia" class="form-control">
+                                <option selected>50000</option>
+                                <option>100000</option>
+                                <option>200000</option>
+                                <option>300000</option>
+                                <option>500000</option>
+                            </select>
+                            <div class="form-group">
+                                <label>Khuyến mãi</label><br />
+                                <input type="radio" name="km" value="50" id="KM50" selected/>50%<br />
+                                <input type="radio" name="km" value="20" id="KM20"/>20%
+                                
+                            </div>
+                            <div class="form-group">
+                                <label>Số lượng</label>
+                                <input type="number" class="form-control" id="txtSoLuong" />
+                                <div id="erSL">(*)</div>
+                            </div>
+                            <div class="form-group">
+                                <label>Thành tiền</label>
+                                <input type="text" class="form-control" id="txtThanhTien" readonly />
+                               
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-success btn-block" id="btnThanhToan">Thanh toán</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

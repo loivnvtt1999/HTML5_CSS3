@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-image: url('../Images/banner-5.png');
+    margin-top: 15px;
+    height: 220px;
+    padding-top: 50px;
+    border: 1px solid black;
+}
+
+nav {
+    /*height: 50px;*/
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+section {
+    
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+footer {
+    padding-top: 5px;
+    /*height: 50px;*/
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}

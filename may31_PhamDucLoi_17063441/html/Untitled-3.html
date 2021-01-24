@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../../testthithuchanhhtml/css/bootstrap.css"/>
+<script type="text/javascript" src="../../testthithuchanhhtml/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../../testthithuchanhhtml/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../testthithuchanhhtml/js/jquery.validate.js"></script>
+<title>Untitled Document</title>
+<style>
+.error{
+	color:red !important;
+	}
+	*{
+		margin:0px;
+		padding:0px;}
+</style>
+<script>
+	$(document).ready(function(e) {
+        jQuery.validator.addMethod("ten",function(value,element){
+			return this.optional(element)||/^[A-Z\ ]+$/.test(value);
+			},"Phai nhap dung ten");
+	$("#fr").validate({
+		rules:{
+			txtMS:{
+					required:true,
+					digits:true,
+					rangelength:[8,8],
+				},
+			txtTen:{
+					required:true,
+					ten:true,
+				},
+			txtEmail:{
+				required:true,
+				email:true,
+				}
+			},
+		messages:{
+			txtMS:{
+				required:"Phai nhap",
+				digits:"Ma chi chua so",
+				rangelength:"Ma chu 8 chu so",
+				},
+			txtTen:{
+				required:"Phai nhap",
+				ten:"Phai nhap chu hoa va khoang trang",
+				},
+			txtEmail:{
+				required:"Phai nhap",
+				email:"phai nhap dung email",
+				}
+			}
+		
+		});
+		var stt=1;
+		$("#fr").submit(function(e){
+			if($("#fr").valid()){
+				var row="<tr><td>"+stt+"</td>";
+				row=row+"<td>"+$("#txtMS").val()+"</td>";
+				row=row+"<td>"+$("#txtTen").val()+"</td>";
+				row=row+"<td>"+$("#txtEmail").val()+"</td>";
+				$("#tblSV").append(row);
+				stt++;
+				return false;
+			}
+			return false;
+			});
+});
+</script>
+</head>
+<body>
+	<div class="container-fuid">
+		<header class="page-header">
+    		<nav class=" navbar navbar-default">
+        		<div class="navbar-header col-md-3 col-lg-3 col-sm-3 col-xl-3 text-center">
+            		<img src="../../testthithuchanhhtml/img/logo.PNG" width="206" height="96"  />
+            	</div>
+                <div class="navbar-header col-md-9 col-lg-9 col-sm-9 col-xl-9 text-center">
+                	<h2 class="text-center">BỘ CÔNG THƯƠNG TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH</h2>
+                </div>
+               <div class="navbar-header col-md-12 col-lg-12 col-sm-12 col-xl-12 text-center">
+               		<h4 class="text-danger">ĐOÀN THANH NIÊN TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH</h4>
+               </div>
+        	</nav>
+            <nav class="navbar bg-info">
+            	<ul class="nav navbar-nav">
+                	<li><a href="#">TRANG CHỦ</a></li>
+            		<li><a href="#">TỔ CHỨC</a></li>
+            		<li><a href="#">HÌNH ẢNH</a></li>
+            		<li><a href="#">HOẠT ĐỘNG</a></li>
+                </ul>
+            </nav>
+    	</header>
+        <div class="row">
+        	<section class="col-md-7 col-lg-7 modal-content">
+            	<h1 class="text-danger text-center bg-success">Tham gia mua he xanh</h1>
+                <form id="fr" name="fr" class="form-horizontal">
+                	<div class="form-group">
+                    	<label for="txtMS" class="col-md-3 col-lg-3 text-right">Ma sinh vien: </label>
+                        <div class="col-md-5 col-lg-5"><input id="txtMS" name="txtMS" class="form-control" type="text" /></div> 
+                    </div>
+                    <div class="form-group">
+                    	<label for="txtTen" class="col-md-3 col-lg-3 text-right">Ho ten sinh vien: </label>
+                        <div class="col-md-5 col-lg-5"><input id="txtTen" name="txtTen" class="form-control" type="text" /></div> 
+                    </div>
+                    <div class="form-group">
+                    	<label for="txtEmail" class="col-md-3 col-lg-3 text-right">Emai: </label>
+                        <div class="col-md-5 col-lg-5"><input type="email" id="txtEmail" name="txtEmail" class="form-control" /></div>
+                    </div>
+                    <div class="form-group text-center">
+                    	<input type="submit" value="Dang ky" class="btn btn-success" />
+                        <input type="reset" value="Nhap lai" class="btn btn-warning" />
+                    </div>
+                </form>
+            </section>
+           	<aside class="col-md-5 col-lg-5">
+            	<table class="table table-striped" id="tblSV">
+                	<caption><h2 class="text-center">Ket qua dang ky</h2></caption>
+                    <tr>
+                    	<th scope="col">STT</th>
+                        <th scope="col">MaSV</th>
+                        <th scope="col">Ho ten</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </table>
+            </aside>
+        </div>
+ 	</div>
+</body>
+</html>

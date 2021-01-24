@@ -1,0 +1,34 @@
+*{padding:0px; margin:0px;}
+.wrapper{
+	padding:20px;
+	margin:20px;
+	width:960px;
+}
+.menu{
+	height: 45px;
+	width:100%;
+	padding-top:15px;
+}
+.menu ul{
+	list-style: none;
+}
+.menu ul li{
+	display: inline-table;
+}
+.menu ul li a{
+	color: blue;
+}
+img{
+	height:220px;
+	width:220px;
+	padding-top:20px;
+}
+.wrapper ul{
+	
+	padding-left:30px;
+	padding-bottom:20px;
+}
+.footer p{
+	padding-top:20px;
+	margin-bottom:2px;
+}

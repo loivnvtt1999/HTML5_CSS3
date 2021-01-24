@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Đăng ký</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/validate.js"></script>
+<style>
+.error{
+	color:red !important;
+	}
+li{
+	list-style-type:upper-roman;}
+*{
+	margin:0px;
+	padding:0px;
+}
+</style>
+</head>
+<body style="background:#FFC;">
+	<div class="container" style="background:#FF9;">
+    	<header class="page-header">
+        	<div class=" navbar navbar-default">
+            	<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                	<a href="trang_chu.html">
+                    	<img src="../img/logo.jpg" width="280" height="129" />
+                    </a>
+                </div>
+                <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
+                	<h2 class="text-center">CÔNG TY DU LỊCH VIỆT HÂN HẠNH KÍNH CHÀO VÀ PHỤC VỤ QUÝ KHÁCH</h2>
+                </div>D
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                	<h3 class="text-center text-danger">Mang ba lô của bạn và lên đường cùng chúng tôi</h3>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                	<h4 class="text-center text-danger">Thân thiện - Rẻ - Tiết kiệm - Thú vị</h4>
+                </div>
+            </div>
+            <div class="navbar bg-info">
+            	<ul class="nav navbar-nav">
+                	<li><a href="trang_chu.html">Trang chủ</a></li>
+                	<li><a href="#">Liên hệ</a></li>
+                    <li><a href="dich_vu.html">Dịch vụ</a></li>
+                </ul> 
+            </div>
+        </header>
+        <div class="row">
+        <section class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+        	<h2 class="text-center text-danger">ĐĂNG NHẬP</h2>
+            <form id="fr1" name="fr1" class="form-horizontal text-left">
+            	<div class="form-group">
+                	<label for="txtDN" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Tên đăng nhập: </label>
+                    <input id="txtDN" name="txtDN" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" />
+                </div>
+                <div class="form-group">
+                	<label for="txtMK" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Mật khẩu: </label>
+                    <input id="txtMK" name="txtMK" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" />
+                </div>
+                <div class="form-group text-center">
+                	<input class="btn btn-success" type="submit" value="Đăng nhập" />
+                    <input class="btn btn-warning" type="reset" value="Hủy"/>
+                </div>
+            </form>
+         </section>
+         <aside class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+         <h3 class="text-center text-danger">ĐĂNG KÝ TÀI KHOẢN</h3>
+         <p class="text-center">(Nếu chưa có tài khoản)</p>
+         <form id="fr2" name="fr2" class="form-horizontal" method="post">
+         		<div class="form-group">
+                	<label for="txtTen" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Họ và tên: </label>
+                    <input id="txtTen" name="txtTen" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" />
+                    <span id="hoten">*nhập họ tên của bạn</span>
+                </div>
+                <div class="form-group">
+                	<label for="txtNgay" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Ngày sinh: </label>
+                    <input id="txtNgay" name="txtNgay" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" type="date" />
+                    <span id="ngaysinh">*nhập ngày sinh của bạn</span>
+                </div>
+                <div class="form-group" style="text-align:center;">
+                	<label class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Giới tính:</label>
+                	<label for="male" class="text-right">Nam</label>
+                	<input type="radio" name="gender" id="male" value="M" checked="checked"  />
+                    <label for="female" class="text-right">Nữ</label>
+                	<input type="radio" name="gender" id="female" value="F" />
+                </div>
+                <div class="form-group">
+                	<label for="txtDiachi" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Địa chỉ: </label>
+                    <input id="txtDiachi" name="txtDiachi" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" />
+                    <span id="diachi">*nhập địa chỉ của bạn</span>
+                </div>
+                <div class="form-group">
+                	<label for="txtSDT" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Số điện thoại: </label>
+                    <input id="txtSDT" name="txtSDT" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" />
+                    <span id="sdt">*nhập số điện thoại của bạn</span>
+                </div>
+                <div class="form-group">
+                	<label for="txtEmail" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Email: </label>
+                    <input id="txtEmail" name="txtEmail" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" type="email" />
+                    <span id="email">*nhập email của bạn</span>
+                </div>
+                <div class="form-group">
+                	<label for="txtDN1" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Tên đăng nhập: </label>
+                    <input id="txtDN1" name="txtdn1" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" type="text" />
+                    <span id="tendn">*nhập tên đăng nhập của bạn</span>
+                </div>
+                <div class="form-group">
+                	<label for="txtMK1" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Mật khẩu: </label>
+                    <input id="txtMK1" name="txtMK1" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" />
+                    <span id="mk">*vui lòng nhập mật khẩu</span>
+                </div>
+                <div class="form-group">
+                	<label for="txtNLMK" class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-right">Nhập lại mật khẩu: </label>
+                    <input id="txtNLMK" name="txtNLMK" class="col-md-8 col-lg-8 col-sm-8 col-xs-8" />
+                    <span id="nlmk">*vui lòng xác nhận lại mật khẩu</span>
+                </div>
+                <div class="form-group text-center">
+             		<input class="btn btn-success" type="submit" value="Đăng ký" id="smdk"/> 
+                	<input class="btn btn-warning" type="reset" value="Nhập lại" />
+             	</div>
+         </form>
+         </aside>
+        </div>
+        <footer style="height:150px; width:100%; background-color:#CF9;">
+        	<p style="font-weight:900; font-size:24px; text-align:center; color:#C03;line-height:150px;">Hotline 19006067<img src="../img/contact.jpg" width="250" height="150" align="right"/>
+                </p>
+        </footer>
+    </div>
+</body>
+</html>

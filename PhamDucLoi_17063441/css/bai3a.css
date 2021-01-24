@@ -1,0 +1,46 @@
+*{padding:0px; margin:0px;}
+body{
+	background:black;
+}
+.menu{
+	width:20%;
+	height:500px;
+	float: left;
+}
+.menu ul{
+	list-style-type: none;
+	padding:10px;
+	
+}
+.menu ul li{
+	border:5px solid yellow;
+	line-height: 50px;
+	position: relative;
+	background:orange;
+	text-align:left;
+	color:white;
+}
+.content header{
+	height:200px;
+	text-align:center;
+}
+.content header h1{
+	text-align:center;
+	line-height: 20px;
+	padding-top:50px;
+	padding-right:20px;
+	padding-bottom:20px;
+	padding-left:20px;
+	color: white;
+}
+.content p{
+	text-align:center;
+	color: white;
+}
+.content img{
+	height:220px;
+	width:220px;
+	float: left;
+	padding:30px;
+	margin-left:60px;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script language="javascript">
+	function thongtin(){
+		var m =prompt("Nhập họ tên: ","Alice");
+		do{
+			var n = parseInt(prompt("Nhập năm sinh: ","1999"));
+		}while(n>2019);
+		document.writeln("Chào " + m + "<br/>");
+		document.writeln("Bạn đã " + (2019-n).toString() + " tuổi");
+	}
+</script>
+</head>
+<body onload="thongtin();">
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script language="javascript">
+	function bang(){
+		document.writeln("<table border='1' width='100%'>");
+		document.writeln("<tr>");
+		document.write("<td style='text-align:center'>Degrees</td><td style='text-align:center'>sin(d)</td><td style='text-align:center'>cos(d)</td>");
+		document.writeln("</tr>");
+		for(var d=0; d<=180; d=d+15){
+			document.writeln("<tr>");
+			document.write("<td style='text-align:center'>"+d+"</td><td style='text-align:center'>"+Math.sin(d/180*Math.PI)+"</td><td style='text-align:center'>"+Math.cos(d/180*Math.PI)+"</td>");
+			document.writeln("</tr>");
+		}
+		document.writeln("</table>");
+	}
+</script>
+</head>
+<body onload="bang();">
+</body>
+</html>

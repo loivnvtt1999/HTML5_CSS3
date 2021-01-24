@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script>
+	function changeColor(){
+		var color= new Array();
+		color[0]="blue";
+		color[1]="red";
+		color[2]="green";
+		color[3]="yellow";
+		color[4]="pink";
+		color[5]="black";
+		var i= Math.round(Math.random()*5);
+		document.bgColor=color[i];
+		idq=setTimeout("changeColor()",1000);
+	}
+	function Stop(){
+		clearTimeout(idq);
+	}
+</script>
+</head>
+<body>
+	<input type="button" name="b1" value="Play" onclick="changeColor()"/>
+	<input type="button" name="b2" value="Stop" onclick="Stop()"/>
+</body>
+</html>

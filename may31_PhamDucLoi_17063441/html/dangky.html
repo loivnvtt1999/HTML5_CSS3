@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<title>Đăng ký</title>
+<style>
+.error{
+	color:red !important;
+	}
+*{
+	padding::0px;
+	margin:0px;
+	}
+</style>
+<script>
+	$(document).ready(function(e) {
+      jQuery.validator.addMethod("ten",function(value, element){
+		  return this.optional(element) || /^[A-Z]+$/.test(value);
+		  },"Phải nhập đúng tên!"  );
+	$("#fr").validate({
+		rules:{
+			txtMS:{
+				required:true,
+				digits:true,
+				rangelength:[8,8],
+				},
+			txtTen:{
+				required:true,
+				ten:true,
+				},
+			txtEmail:{
+				required:true,
+				email:true,
+				}
+			},
+		messages:{
+			txtMS:{
+				required:"Phải nhập",
+				digits:"Mã chỉ chứa số!",
+				rangelength:"Mã số có 8 số!",
+				},
+			txtTen:{
+				required:"Phải nhập!",
+				ten:"Phải nhập chữ hoa và khoảng trắng!",
+				},
+			txtEmail:{
+				required:"Phải nhập",
+				email:"Phải nhập đúng email",
+				}
+			}
+		});
+		/*var stt=1;
+		$("#fr").submit(function(e){
+			if($("#fr").valid())
+			{
+				var row="<tr><td>"+stt+"</td>";
+				row=row+"<td>"+$("#txtMS").val()+"</td>";
+				row=row+"<td>"+$("#txtTen").val()+"</td>";
+				row=row+"<td>"+$("#txtEmail").val()+"</td></tr>";
+				$("#tblSV").append(row);
+				stt++;
+				return false;
+			}
+			return false;
+		});*/
+});
+</script>
+</head>
+<body>
+	<div class="container-fuid">
+    	<header class="page-header">
+        <nav class="navbar navbar-default">
+        	<div class="navbar-header col-lg-4">
+            	<a href="#"><img src="../img/logo.png" alt=""/></a>
+            </div>
+            <div class="navbar-header col-lg-7 text-center">
+            <h2>BỘ CÔNG THƯƠNG TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH</h2>
+            <h4 class="text-danger">ĐOÀN THANH NIÊN TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỒ HỒ CHÍ MINH</h4>
+            </div>
+        </nav>
+        <nav class="navbar bg-info">
+        	<ul class="nav navbar-nav navbar-center">
+            <li><a href="#">TRANG CHỦ</a></li>
+            <li><a href="#">TỔ CHỨC</a></li>
+            <li><a href="#">HÌNH ẢNH</a></li>
+            <li><a href="#">HOẠT ĐỘNG</a></li>
+            </ul>
+        </nav>
+        </header>
+        <div class="row">
+        <section class="col-lg-7 col-md-7 modal-content">
+        <h1 class="bg-success text-danger text-center">Tham gia mùa hè xanh</h1>
+        <form id="fr" name="fr" class="form-horizontal">
+        <div class="form-group">
+        <label for="txtMS" class="col-lg-3 col-md-3 text-right">MSSV*:</label>
+        <div class="col-lg-5 col-md-5"><input  type="text" name="txtMS" id="txtMS" class="form-control" /></div>
+        </div>
+        <div class="form-group">
+        	<label for="txtTen" class="col-lg-3 col-md-3 text-right">Ten SV*:</label>
+        <div class="col-lg-5 col-md-5"><input  type="text" name="txtTen" id="txtTen" class="form-control" /></div>
+        </div>
+        <div class="form-group">
+        	<label for="txtEmail" class="col-lg-3 col-md-3 text-right">Email*:</label>
+        <div class="col-lg-5 col-md-5"><input  type="text" name="txtEmail" id="txtEmail" class="form-control" /></div>
+        </div>
+        <div class="form-group text-center">
+        	<input type="submit" value="Đăng ký" class="btn btn-success"/>
+            <input type="reset" value="Nhập lại" class="btn btn-warning"/>
+        </div>
+        </form>
+        </section>
+        <aside class="col-lg-5 col-md-5">
+        <table class="table table-striped" id="tblSV">
+        	<caption>
+            <h2 class="text-center">Kết quả đăng ký</h2>
+            </caption>
+            <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Mã SV</th>
+            <th scope="col">Tên SV</th>
+            <th scope="col">Email</th>
+            </tr>
+        </table>
+        </aside>
+        </div>
+        <footer class="modal-footer bg-primary">
+    	@2018 Đoàn thanh niên- Trường Đại học Công nghiệp TP. Hồ Chí Minh
+    </footer>
+    </div>
+</body>
+</html>

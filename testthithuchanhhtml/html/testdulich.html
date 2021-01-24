@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<script>
+	$(document).ready(function(e) {
+		$("#myBtn").click(function(){
+			$("#myModal").modal();
+			});
+		function KiemTraMa(){
+			var re=/^[A-Z]{3}/;
+			if(!re.test($("#txtMa").val())){
+				$("#ma").text("Sai du lieu");
+				return false;
+				}
+			return true;
+			}
+		$("#txtMa").on("blur",function(){
+			KiemTraMa();
+			});
+		function KiemTraHanhTrinh(){
+			var re=/^[A-Z]{3}/;
+			if(!re.test($("#txtHT").val())){
+				$("#ht").text("Sai du lieu");
+				return false;
+				}
+			return true;
+			}
+		$("#txtHT").on("blur",function(){
+			KiemTraHanhTrinh();
+			});
+			var stt=1;
+		function SubmitForm(){
+			if(!KiemTraMa()||!KiemTraHanhTrinh()){
+					
+					return false;
+				}
+			
+			var row="<tr><td>"+stt+"</td>";
+					row=row+"<td>"+$("#txtMa").val()+"</td>";
+					row=row+"<td>"+$("#txtHT").val()+"</td></tr>";
+					$("#tablebody").append(row);
+					stt++;
+					return true;
+			}
+			$("#btnSave").on("click",function(){
+			SubmitForm();
+			});
+    });
+</script>
+</head>
+<body>
+<div class="container">
+	<header class="page-header">
+    	<nav class="navbar navbar-default">
+        	<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            	<img src="../img/banner-5.png" width="1070" height="220" />
+            </div>
+        </nav>
+        <nav class="navbar bg-info">
+        	<ul class="nav navbar-nav">
+            	<li><a href="#" id="dn"> Đăng nhập </a></li>
+                <li><a href="#" id="myBtn"> Mở tour mới </a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="row">
+    	<section class="col-md-12">
+        	<table class="table table-striped" id="tablebody">
+            	<caption><h4>DANH SÁCH TOUR - DU LỊCH VIỆT</h4></caption>
+                	<tr>
+                    	<th scope="col">STT</th>
+                        <th scope="col">Mã Tour</th>
+                        <th scope="col">Hành trình</th>
+                        <th scope="col">Ngày khởi hành</th>
+                        <th scope="col">Thời gian</th>
+                        <th scope="col">Giá tour</th>
+                        <th scope="col">Ảnh đại diện</th>
+                    </tr>
+            </table>
+        </section>
+    </div>
+	<div class="col-md-12">
+    	<footer style="text-align:center; font-size:18px; border-top:2px solid black" width="100%">SVTH: Trương Đình Nguyên - MSSV:17066461</footer>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+    	<div class="modal-dialog">
+            <div class="modal-content">
+            	<div class="modal-header">
+            		<button type="button" class="close" data-dismiss="modal">&times;</button>
+                	<h4 style="text-align:center;">THÔNG TIN TOUR</h4>
+            	</div>
+                <div class="modal-body">
+            		<form id="fr" role="form" class="form-horizontal" name="fr">
+                		<div class="form-group">
+                    		<label for="txtMa" class="col-md-3 control-label">Mã tour</label>
+                            <div class="col-md-5"><input type="text" id="txtMa" class="form-control" name="txtMa" onblur="return KiemTraTenDN() ;"/></div>
+                            <span id="ma">*</span>
+                   		 </div>
+                         <div class="form-group">
+                    		<label for="txtHT" class="col-md-3 control-label">Hành trình</label>
+                            <div class="col-md-5"><input type="text" id="txtHT" class="form-control" name="txtHT" /></div>
+                            <span id="ht">*</span>
+                   		 </div>
+                        <button type="button" id="btnSave" class="btn btn-success btn-block" >Lưu</button>
+                    
+                	</form>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

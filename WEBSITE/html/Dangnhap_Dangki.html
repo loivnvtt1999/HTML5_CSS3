@@ -1,0 +1,178 @@
+<html>
+<head>
+		<title> The King | Đăng nhập</title>
+		 <meta charset="utf-8">
+	
+		<link rel="stylesheet" href="../css/css2.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="../css/main1.css">
+		<link rel="stylesheet" type="text/css" href="../css/all.css">
+		
+		<script src="../js/KTDK_DN.js"></script>
+</head>
+<body>
+
+
+<div class="header">
+		<header class="main-header" style="background-color:black">
+		<a href="index.html"> <h1 class="band-name band-name-large ">THE KING</h1> </a>
+            <nav class="main-nav nav">
+                  <ul>
+                       <li><a href="Dangnhap_Dangki.html">ĐĂNG NHẬP </a></li>
+                     <li><a href="gioithieu.html"><span class="	far fa-user"></span> GIỚI THIỆU </a></li>
+					  <li><a href="#"><span class="		fas fa-tools"></span> TUYỂN DỤNG </a></li>
+                </ul>	
+            </nav>
+			<nav class="main-nav nav">
+			<i class="	fa fa-map-marker"> </i>  
+			<span>12 Nguyễn Văn Bảo, P.4, Q.Gò Vấp TP.Hồ Chí Minh</span>
+			<i class="far fa-clock"> </i>  
+			<span>8:30AM-22:00PM </span>
+			</nav>        
+        </header>
+</div>
+	<div class="containerdn">
+    <a href="#" class="head" onclick="DangNhap()">ĐĂNG NHẬP</a> 
+     <a href="#" id="dangki" class="head" onclick="DangKi()">ĐĂNG KÍ</a> 
+   <div id="dangnhap1">
+       <form  name="frmDangnhap" action="index.html">
+			<div id="h2a">
+				<h2> Đăng Nhập </h2>
+				
+				<hr/>
+				
+			</div>
+			<div id="thongbao">
+				<p id="ktthongbao1"></p>
+			</div>
+			<table name="bangdangnhap" id="bangdangnhap">
+				<tr>
+					<th> Tên đăng nhập:</th>
+					<th><input type="text" name="namedn" id="namedn"/></th>
+				</tr>
+				<tr>
+				
+					<th> Password:</th>
+					<th><input type ="password" id="passdn" name="passdn"></th>
+						
+				</tr>		
+				<TR>
+					<th></th>
+					<TH>
+				<button  onclick=" return KTdulieu() ;"/>  NHẤN ĐỂ ĐĂNG NHẬP </button></TH>
+				</TR>
+				<tr>
+					<th colspan="2"><p> Nếu bạn chưa có tài khoản . Vui lòng bấm <a onclick="Dangki()" href="#" style="color:red"><b> Đăng kí</b>  </a> </p>
+				</tr>
+			</table>		
+       </form>
+  </div>
+   <div id="dangki1">
+     <form name="frmDangKi" action="index.html">
+			<div id="h2a">
+				<h2> Đăng Kí Thành Viên </h2>		
+				<hr/>
+				<div id="thongbao">
+				<p id="ktthongbao"></p>
+				</div>
+			</div>
+				<table name="bangdangki" id="bangdangki">
+					<tr>
+						<td> Họ và tên:</td>
+						<td> <input type="text" id="name" name="name"></td>
+					
+			
+					</tr>
+					<tr>
+						<td>  E-mail:</td>
+						<td> <input type="text" id="email" name="email"></td>
+						
+			
+					</tr>
+					<tr>
+						<td> Tên tài khoản:</td>
+						<td> <input type="text" id="username" name="username"></td>
+						
+					</tr>
+					<tr>
+						<td> Mật khẩu:</td>
+						<td> <input type="password" id="pass" name="pass"></td>
+						
+					</tr>
+					
+					
+					<tr>	
+						<th></th>
+						<td>
+							
+						  <button onclick="return KThople()">NHẤN ĐỂ ĐĂNG KÍ </button>
+						</td>
+					</tr>
+						
+					
+					<tr>
+						<td colspan="2">
+							<p> Nếu bạn đã là thành viên. Vui lòng bấm <a onclick="DangNhap()" href="#" style="color:red"><b> Đăng nhập</b>  </a> </p>
+						</td>
+					</tr>				
+				</table>	
+     </form>
+  </div>
+  
+    
+ </div>
+	<footer>
+		<div class="wrapper">
+			<div class="f_cols">
+				<h3>Địa chỉ:</h3>
+				<p>CN1: 477A-TCH18 P.Tân Chánh Hiệp Q.12 <span class="phone">0869.29.59.74</span></p> 	
+				<p>CN2: 1068 Quang Trung P.8 Q.Gò Vấp <span class="phone">0868.786.123</span></p> 	
+				<p>CN3: 1234 Cầu Giấy Hà Nội <span class="phone">0381.678.890</span></p> 	
+					
+				
+			</div>	
+
+			<div class="f_cols">
+				<h3>Dịch vụ:</h3>
+				<ul>
+					<li><a href="#">Thiết kế</a></li>
+					<li><a href="#">Vận chuyển</a></li>
+					<li><a href="#">Tư vấn</a></li>
+				
+				</ul>	
+			</div>	
+
+			<div class="f_cols">
+				<h3>Hỗ trợ:</h3>
+				<ul>
+					
+					<li><a href="#">Chăm sóc khách hàng</a></li>
+					<li><a href="#">Chính sách</a></li>
+				</ul>	
+			</div>	
+
+			<div class="f_cols">
+				<h3>Thanh toán</h3>
+				<ul>
+				<li><a href="#">Momo</a></li>
+				<li><a href="#">Paypal</a></li>
+				<li><a href="#">ATM</a></li>
+				<li><a href="#">Ship-code</a></li>
+				</ul>
+			</div>	
+
+
+		</div>
+	</footer>
+		
+
+
+	
+
+
+	
+
+		
+	
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script language="javascript" type="text/javascript">
+	function startTime(){
+		var d = new Date();
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s = d.getSeconds();
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById('timer').innerHTML = h + ":" + m + ":" + s + "<br/>";
+		t = setTimeout("startTime()", 500);
+	}
+	function checkTime(i){
+		if(i<10)
+			i = "0" + i;
+		return i;
+	}
+	function stop(){
+		clearTimeout(t);
+	}
+</script>
+</head>
+<body onload="startTime()">
+	<div id="timer"></div>
+	<input type="button" value="clear" onclick="stop()" />
+</body>
+</html>

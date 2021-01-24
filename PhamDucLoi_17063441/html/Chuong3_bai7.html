@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script language="javascript">
+	function ZoomIn(w, h){
+		document.getElementById("hinh1").style.width=w;
+		document.getElementById("hinh1").style.height=h;
+	}
+</script>
+</head>
+<body>
+	<img src="../img/p1.PNG" id="hinh1" width="300px" height="300px"
+	onmouseover="ZoomIn('600px', '600px')"
+	onmouseout="ZoomIn('300px', '300px')"/>
+</body>
+</html>

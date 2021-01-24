@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+</head>
+
+<body>
+<div class="container" style="width:960px; border:2px solid black">
+	<div class="col-md-12" width="100%">
+    	<header>
+        	<img src="../img/banner-5.png" width="100%"/>
+        </header>
+    </div>
+    <div class="col-md-12">
+    	<nav class="navbar-collapse">
+        	<ul class="navbar-nav nav">
+            	<li><a href="#" id="dn"> Đăng nhập </a></li>
+                <li><a href="#" id="myBtn"> Mở tour mới </a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-md-12">
+    	<section class="table-responsive">
+        	<table class="table table-striped">
+            	<caption><h4>DANH SÁCH TOUR - DU LỊCH VIỆT</h4></caption>
+                <thead>
+                	<tr>
+                    	<th>STT</th>
+                        <th>Mã Tour</th>
+                        <th>Hành trình</th>
+                        <th>Ngày khởi hành</th>
+                        <th>Thời gian</th>
+                        <th>Giá tour</th>
+                        <th>Ảnh đại diện</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+    </div>
+	<div class="col-md-12">
+    	<footer style="text-align:center; font-size:18px; border-top:2px solid black" width="100%">SVTH: Trương Đình Nguyên - MSSV:17066461</footer>
+    </div>
+</div>
+<!--modal-->
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog">
+    	<!-- Modal content-->
+        <div class="modal-content">
+        	<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 style="text-align:center">THÔNG TIN TOUR</h4>
+            </div>
+            <div class="modal-body">
+            	<form role="form" class="form-horizontal">
+                	<div class="form-group">
+                    	<div id="thongbao" class="text-danger" style="text-align:center"></div>
+                    </div>
+                	<div class="form-group">
+                    	<label for="txtMA" class="control-label col-xs-3">Mã tour</label>
+                        <div class="col-md-9">
+                        	<input type="text" class="form-control" 	value="HNI-HCM-12-2018" id="txtMa"  placeholder="Nhập theo mẫu:XXX-XXX-mm-yyyy">
+                            <span id="tbMa" class="text-danger">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    	<label for="txtDiemDen" class="control-label col-xs-3">Hành trình</label>
+                        <div class="col-md-9">
+                        	<input type="text" class="form-control" id="txtDiemDen"  placeholder="Nhập hành trình">
+                            <span id="tbDiemDen" class="text-danger">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    	<label for="txtNgay" class="control-label col-xs-3">Ngày khởi hành</label>
+                        <div class="col-md-9">
+                        	<input type="text" class="form-control" id="txtNgay">
+                            <span id="tbNgay" class="text-danger">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    	<label for="txtTG" class="control-label col-xs-3">Thời gian</label>
+                        <div class="col-md-9">
+                        	<input type="text" class="form-control" id="txtTG"  placeholder="Nhập thời gian đi (4 ngày 3 đêm)">
+                            <span id="tbTG" class="text-danger">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    	<label for="txtGia" class="control-label col-xs-3">Giá tour</label>
+                        <div class="col-md-9">
+                        	<input type="text" class="form-control" id="txtGia"  placeholder="Số > 0">
+                            <span id="tbGia" class="text-danger">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    	<label for="txtAnh" class="control-label col-xs-3">Ảnh đại diện</label>
+                        <div class="col-md-9">
+                        	<input type="file" class="form-control" id="txtAnh"  accept=".jpg, .jpeg, .png">
+                            <span id="tbAnh" class="text-danger">*</span>
+                        </div>
+                        <button type="button" id="btnSave" class="btn btn-success btn-block">Lưu</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

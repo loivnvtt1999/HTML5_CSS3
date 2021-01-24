@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+
+<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<style>
+.error{
+	color:red !important;
+	}
+	li{
+		list-style-type:upper-roman;}
+*{
+	padding:0px;
+	margin:0px;}
+</style>
+<script>
+	$(document).ready(function(e) {
+        jQuery.validator.addMethod("ten",function(value,element){
+			return this.optional(element)||/^[A-Z\ ]+$/.test(value);
+			},"Phải nhập đúng tên");
+	/*$(document).ready(function(e) {
+        jQuery.validator.addMethod("ten",function(value,element){
+			return this.optional(element)||/^[A-Z\ ]+$/.test(value);
+			},"Phai nhap dung ten");*/
+	$("#fr").validate({
+		rules:{
+			txtMS:{
+				required:true,
+				digits:true,
+				rangelength:[8,8],
+				},
+			txtTen:{
+				required:true,
+				ten:true
+				},
+			txtEmail:{
+				required:true,
+				email:true,
+				}
+			},
+		messages:{
+			txtMS:{
+				required:"Phải nhập",
+				digits:"Mã chỉ chứa số",
+				rangelength:"Mã chứa 8 số",
+				},
+			txtTen:{
+				required:"Phải nhập",
+				ten:"Nhập đúng tên",
+				},
+			txtEmail:{
+				required:"Phải nhập",
+				email:"Nhập đúng email",
+				}
+			}
+		});
+		/*$("#fr").validate({
+		rules:{
+			txtMS:{
+					required:true,
+					digits:true,
+					rangelength:[8,8],
+				},
+			txtTen:{
+					required:true,
+					ten:true,
+				},
+			txtEmail:{
+				required:true,
+				email:true,
+				}
+			},
+		messages:{
+			txtMS:{
+				required:"Phai nhap",
+				digits:"Ma chi chua so",
+				rangelength:"Ma chu 8 chu so",
+				},
+			txtTen:{
+				required:"Phai nhap",
+				ten:"Phai nhap chu hoa va khoang trang",
+				},
+			txtEmail:{
+				required:"Phai nhap",
+				email:"phai nhap dung email",
+				}
+			}
+		
+		});*/
+		/*var stt=1;
+		$("#fr").submit(function(e){
+			if($("#fr").valid()){
+				var row="<tr><td>"+stt+"</td>";
+				row=row+"<td>"+$("#txtMS").val()+"</td>";
+				row=row+"<td>"+$("txtTen").val()+"</td>";
+				row=row+"<td>"+$("txtEmail").val()+"</td></tr>";
+				$("#tblSV").append(row);
+				stt++;
+				return false;
+				}
+				return false;
+			});*/
+		var stt=1;
+		$("#fr").submit(function(e){
+			if($("#fr").valid()){
+				var row="<tr><td>"+stt+"</td>";
+				row=row+"<td>"+$("#txtMS").val()+"</td>";
+				row=row+"<td>"+$("#txtTen").val()+"</td>";
+				row=row+"<td>"+$("#txtEmail").val()+"</td>";
+				$("#tblSV").append(row);
+				stt++;
+				return false;
+			}
+			return false;
+			});
+    });
+</script>
+</head>
+<body>
+	<div class="container">
+    <header class="page-header">
+    	<nav class="navbar navbar-default">
+        	<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+            	<a href="#">
+                	<img src="../img/logo.PNG" width="206" height="96" />
+                </a>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-9 col-xl-9">
+            	<h2 class="text-center">Những vị tướng tủ của Lợi</h2>
+            </div>
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+            	<h4 class="text-center text-danger">Thi thực hành môn hệ thống và công nghệ web</h4>
+            </div>
+        </nav>
+        <nav class="navbar bg-info">
+        	<ul class="nav navbar-nav">
+            	<li><a href="#">Blitzcrank</a></li>
+                <li><a href="#">Nidalee</a></li>
+                <li><a href="#">Lee Sin</a></li>
+            </ul>
+        </nav> 
+    </header>
+    <div class="row">
+    	<section class="col-md-7 col-lg-7 col-sm-7 col-xs-7 modal-content">
+        	<h1 class="text-danger text-center bg-success">Tham gia mùa hè xanh</h1>
+            <form id="fr" name="fr" class="form-horizontal">
+            <div class="form-group">
+            	<label for="txtMS" class="col-md-3 col-lg-3 col-sm-3 col-xl-3 text-right">Mã SV: </label>
+                <div class="col-md-5 col-lg-5 col-sm-5 col-xl-5"><input id="txtMS" type="text" name="txtMS" class="form-control"/></div>
+             </div>
+              <div class="form-group">
+            	<label for="txtTen" class="col-md-3 col-lg-3 col-sm-3 col-xl-3 text-right">Ten SV: </label>
+                <div class="col-md-5 col-lg-5 col-sm-5 col-xl-5"><input id="txtTen" type="text" name="txtTen" class="form-control"/></div>
+             </div>
+             <div class="form-group">
+            	<label for="txtEmail" class="col-md-3 col-lg-3 col-sm-3 col-xl-3 text-right">Ten SV: </label>
+                <div class="col-md-5 col-lg-5 col-sm-5 col-xl-5"><input id="txtEmail" type="email" name="txtEmail" class="form-control"/></div>
+             </div>
+             <div class="form-group text-center">
+             	<input class="btn btn-success" type="submit" value="Đăng ký" /> 
+                <input class="btn btn-warning" type="reset" value="Nhập lại" />
+             </div>
+            </form>
+        </section>
+        <aside class="col-md-5 col-lg-5 col-sm-5 col-xs-5">
+        	<table class="table table-striped" id="tblSV">
+                	<caption><h2 class="text-center">Ket qua dang ky</h2></caption>
+                    <tr>
+                    	<th scope="col">STT</th>
+                        <th scope="col">MaSV</th>
+                        <th scope="col">Ho ten</th>
+                        <th scope="col">Email</th>
+                    </tr>
+               </table>
+        </aside>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script language="javascript">
+	function bang(){
+		var m = parseInt(prompt("Nhập số dòng: ","3"));
+		var n = parseInt(prompt("Nhập số cột: ","4"));
+		document.writeln("<table border='1' width='100%'>");
+		for(var i=0;i<m;i++){
+			document.writeln("<tr>");
+			for(var j=0;j<n;j++){
+				document.write("<td>"+(i+1).toString()+(j+1).toString()+"</td>");
+			}
+			document.writeln("</tr>");
+		}
+		document.writeln("</table>");
+	}
+</script>
+</head>
+<body onload="bang();">
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script language="JavaScript">
+function KiemTra() {
+ if (frm.NoiDung.value.length > 1000)
+alert("Bạn đã gõ qúa số ký tự cho phép !");
+ frm.SoKyTu.value =1000- frm.NoiDung.value.length;
+}
+</script>
+
+</head>
+<body>
+	<form name="frm">
+		<input type="text" name="SoKyTu"/>
+		Character left:
+		<textarea name="NoiDung" cols="50" rows="10" onkeyup="KiemTra();"></textarea>
+	</form>
+</body>
+</html>

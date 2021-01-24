@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.wrapper{
+width:960px;
+}
+nav{
+	display:block;
+	position:absolute;
+	top:0;
+	width:100%;
+	background-color:green;
+}
+li{
+	list-style-type:none;
+	display:inline;
+	margin-right:20px;
+	font-size:25px;
+}
+a:link{
+	color:#fff;
+	text-decoration:none;
+}
+a:hover{
+	 color:orange;
+	 text-decoration:none;
+}
+li > ul{ display:none }
+li:hover ul{
+	display:block;position:absolute;
+	left:200px;
+	background-color:green;margin:0;
+}
+li:hover ul li a:link{
+	display:block;
+	margin-left:-30px;
+}
+.footer{
+	position:fixed;
+	bottom:0;
+	display:block;
+	width:100%;
+	background-color:green;
+	color:#fff;
+}
+button {
+	width:200px;
+	padding:8px;
+	background-color:#428bca;
+	bord-color:#357ebd;
+	color: #ffffff;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	khtml-border-radius:10px;
+	text-align:center;
+	vertical-align:middle;
+	border:1px solid transparent;
+	font-weight:900;
+	font-size:125%;
+}
+.stitched{
+	
+	width:100px; padding:5px;
+	margin:5px; background:#0d90df;
+	color:#ffffff; font-size:14px; font-weight:bold;
+	line-height:1.3em;
+	border:2px dashed #ffffff;
+	border-radius:10px;
+	box-shadow:0 0 0 4px #0d90df,2px 1px 6px 4px
+	rgba(10,10,0,0.5);
+	text-shadow:-1px -1px #aa3030;
+	font-weight:normal;
+	text-align:center;
+}
+</style>
+<title></title>
+</head>
+<body>
+	<div class="wrapper">
+	<div class="menu" style="height:30px;width:100%">
+	<nav>
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Products</a>
+			<ul>
+			<li><a href="#">Engineering</a></li>
+			<li><a href="#">Telecom</a></li>
+			<li><a href="#">Energy</a></li>
+			<li><a href="#">Finance</a></li>
+			<li><a href="#">Consutancy</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+	</nav>
+	</div>
+	<div class="content" style="width:100%">
+	<div class="stitched">
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Products</a>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+	</div>
+		<button>Subcribe Now</button>
+	</div>
+	<div class="footer">
+	
+		<p>I will be stuck here</p>
+	</div>
+	</div>
+</body>
+</html>
